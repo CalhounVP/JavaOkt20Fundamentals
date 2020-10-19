@@ -6,6 +6,7 @@ public class Ex4StringBuilders {
     public static void main(String[] args) {
         //local properties
         StringBuilder text1, text2;
+        String toModify;
         Scanner kbd = new Scanner(System.in);
 
         //asking for basic input
@@ -28,7 +29,10 @@ public class Ex4StringBuilders {
         System.out.println("Reversed second text: " + text2.reverse());
 
         //remove spaces easiest way
-        System.out.println("First text no spaces: " + text1.toString().replaceAll(" ", ""));
+        toModify = text1.toString().replaceAll(" ", "");
+        //replace the old text with the new modified one
+        text1.replace(0, text1.length(), toModify);
+        System.out.println("First text no spaces: " + text1);
 
         //double all t
         System.out.println("Doubled T in second text: " + doublingT(text2));

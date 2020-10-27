@@ -9,28 +9,32 @@ public class Ex3 {
     // indien ja begint de uitvoering opnieuw indien nee eindigd het programma.
 
     public static void main(String[] args) {
+        //properties
+        Scanner kbd = new Scanner(System.in);
+        boolean restart = false;
+        int number1;
+        int number2;
 
-        boolean restart = true;
+        //process needs to be done at least once, so a do while loop is ideal
+        do {
+            //asking input
+            System.out.println("We will be doing an addition: \nPlease input your first number");
+            number1 = kbd.nextInt();
+            System.out.println("Please input your second number");
+            number2 = kbd.nextInt();
 
-        while (restart) {
-            Scanner scanner = new Scanner(System.in);
+            //give result
+            System.out.println("Your sum is: " + (number1+number2));
 
-            System.out.println("New addition");
+            //ask if repeat is wanted?
+            System.out.println("Would you like to do an other addition? yes/no");
+            //if user inputs yes the loop will repeat
+            restart = kbd.next().equals("yes");
 
-            System.out.println("First number :");
-            int a = scanner.nextInt();
+        } while (restart);
 
-            System.out.println("Second number :");
-            int b = scanner.nextInt();
-
-            System.out.println("Sum :");
-            System.out.println(a + b);
-
-            System.out.println("Press '1' to restart");
-            int input = scanner.nextInt();
-
-            if (input != 1) restart = false;
-        }
+        //don't forget to close your scanner!
+        kbd.close();
 
 
     }

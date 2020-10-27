@@ -3,37 +3,24 @@ package be.intecbrussel.extraExercise;
 import java.util.Scanner;
 
 public class Ex8 {
-    //Schrijf een programma dat bij een
+    //Schrijf een programma dat bij een opgegeven string de laatste 3 symbolen in caps zet.
 
     public static void main(String[] args) {
-        Scanner kb = new Scanner(System.in);
-        System.out.println("Enter a word");
-        String inputStr = kb.nextLine();
-        int length = inputStr.length();
+        //properties
+        Scanner kbd = new Scanner(System.in);
+        String input;
 
-        String last3;
-//        StringBuilder text = new StringBuilder(kb.next());
-//        System.out.println("String contains = " + text);
-//
-//        int count = 0;
-//
-//        for (int i = 0; i < text.length(); i++) {
-//            if (text.charAt(i) != ' ')
-//                count++;
-//        }
-//        System.out.println("Last 3 symbols in caps are = "
-//                + text.substring(count - 3).toUpperCase());
+        //asking for input
+        System.out.println("Please give me a string");
+        input = kbd.nextLine();
+        kbd.close();
 
-
-        if (inputStr == null || inputStr.length() < 3){
-            last3 = inputStr;
-        }else {
-            last3 = inputStr.substring(inputStr.length() - 3);
-        }
-
-        System.out.println("the transformed word is: " + inputStr.substring(0,length-3) + last3.toUpperCase());
-
-
+        //printing out result
+        System.out.println(input.substring(0,input.length()-3)
+                            + input.substring(input.length()-3)
+                                    .toUpperCase());
+        //methods can easily be chained like that,
+        // you just need to keep an eye on what your result of the previous method is
     }
 }
 

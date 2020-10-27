@@ -6,19 +6,22 @@ public class Ex6 {
     //check voor palindroom
 
     public static void main(String[] args) {
-        Scanner keyboard = new Scanner(System.in);
-        String text = keyboard.nextLine();
+        //properties
+        Scanner kbd = new Scanner(System.in);
+        String text;
+
+        //ask user input
+        System.out.println("Give a string to check on being a palindrome");
+        text = kbd.nextLine();
+
+        //checking the input and printing result
         System.out.println(isPalindrome(text));
     }
 
     public static boolean isPalindrome(String text){
-        String basicText =  text.replaceAll(" ","").toLowerCase();
-        StringBuilder reverseText = new StringBuilder(basicText);
-        reverseText.reverse();
-        if (basicText.equals(reverseText.toString())){
-            return true;
-        }
-        return false;
-
+        StringBuilder palindromeChecker = new StringBuilder(text);
+        //when we reverse the StringBuilder and pull a string from it
+        // we can compare it with the input
+        return palindromeChecker.reverse().toString().equals(text);
     }
 }

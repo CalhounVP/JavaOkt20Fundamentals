@@ -10,35 +10,24 @@ public class Ex5 {
     }
 
     public static int average (int... values) {
-        int average = 0;
-
+        int sum = 0;
         for (int i: values) {
-            average += i;
+            sum += i;
         }
-
-        average /= values.length;
-
-        return average;
+        //to get the average we need to divide by the amount of elements we addeed up
+        return sum/values.length;
     }
 
-
     public static int min (int... values) {
-//        int min = values[0];
-//        for (int number : values) {
-//            if (number < min) {
-//                min = number;
-//            }
-//        }
-        
-        //checking for lowest value
+        //checking for lowest value by sorting it from low to high
         Arrays.sort(values);
 
         return values[0];
     }
 
-
     public static int max (int... values) {
         Arrays.sort(values);
+        //getting the last value since it will be sorted from low to high
         return values[values.length-1];
     }
 }

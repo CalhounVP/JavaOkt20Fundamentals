@@ -7,27 +7,29 @@ public class Ex2 {
     // de klinkers gaat tellen en het aantal uitprint.
 
     public static void main(String[] args) {
+        //properties
         Scanner userInput = new Scanner(System.in);
-        String givenString = userInput.nextLine();
-
+        String givenString;
         int count = 0;
+
+        //asking input
+        System.out.println("Please give a string:");
+        givenString = userInput.nextLine().toLowerCase();
+        //by inputting the string to lowercase after receiving you make sure it counts every vowel
+
+        //checking vowel count
         for (int i = 0; i < givenString.length(); i++) {
-            char a = givenString.charAt(i);
-            if (isVowel(a)) {
+            if (isVowel(givenString.charAt(i))) {
                 count++;
             }
+        }
 
-        } System.out.println(count);
+        //printing result
+        System.out.println("The amount of vowels is:" + count);
     }
 
     private static boolean isVowel(char a) {
-        boolean isVowel;
-
-        if (a == 'a'|| a == 'e'|| a == 'i'|| a == 'o'|| a == 'u') {
-            isVowel = true;
-        } else {
-            isVowel = false;
-        } return isVowel;
-
+        //you can check things directly in the return statement for a boolean
+        return a == 'a' || a == 'e' || a == 'i' || a == 'o' || a == 'u';
     }
 }

@@ -7,37 +7,38 @@ public class Ex1 {
     // (Tip: Gebruik 3 Strings die waar je de deelbare getallen aan meegeeft en op het einde print)
 
     public static void main(String[] args) {
-        divisibleByThree();
-        System.out.println("");
-        divisibleByFive();
-        System.out.println("");
-        divisibleByBoth();
-    }
+        //properties
+        //stringBuilders and append were also an option but I wanted to build up to that
+        String dividableBy3 = "Dividable by 3: ";
+        String dividableBy5 = "Dividable by 5: ";
+        String dividableBy3And5 = "Dividable by 3 & 5: ";
 
-    public static void divisibleByThree(){
-        for (int i = 3; i < 100; i+=3) {
-            System.out.print(i + " ");
-        }
-    }
-    public static void divisibleByFive(){
-        for (int i = 5; i < 100; i+=5) {
-            System.out.print(i + " ");
-        }
-    }
-    public static void divisibleByBoth(){
-        for (int i = 3; i < 100; i++) {
-            if(i %3 == 0 && i %5 == 0){
-                System.out.print(i + " ");
+        //checking
+        for (int i = 1; i <= 100; i++) {
+            if (dividableByNum(i, 3) && dividableByNum(i, 5)) {
+                //anything you add to a string is typecasted to a string
+                dividableBy3And5 += i + " ";
+            } else if (dividableByNum(i,3)) {
+                dividableBy3 += i + " ";
+            } else if (dividableByNum(i,5)) {
+                dividableBy5 += i + " ";
             }
         }
+
+        //printing out result
+        System.out.println(dividableBy3);
+        System.out.println(dividableBy5);
+        System.out.println(dividableBy3And5);
+
     }
 
-    public static void divivisbleBy (int divider) {
-        String dividable = "These number is dividable by " + divider + ": //n";
-        for (int i = 1; i <= 100; i++ ) {
-            if (i%divider == 0) {
-                dividable += i + " ";
-            }
+    public static boolean dividableByNum (int number, int divider) {
+        //check if you can divide by the given divider without a rest
+        if (number%divider == 0) {
+            return true;
         }
+        return false;
     }
+
+
 }

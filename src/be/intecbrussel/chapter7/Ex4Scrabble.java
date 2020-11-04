@@ -24,8 +24,7 @@ public class Ex4Scrabble {
         System.out.println(totalPoints);
         
         //resetting points to 0 purely to demonstrate a different less optimized approach
-        char[] letters = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i',
-                'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+        char[] letters = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
         totalPoints =0;
         
         //loop through every letter of the input
